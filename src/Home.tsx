@@ -1,5 +1,5 @@
-import { IonContent, IonHeader, IonIcon, IonPage, IonTab, IonTabBar, IonTabButton, IonTabs, IonTitle, IonToolbar } from '@ionic/react';
-import { playCircle, radio, library, search } from 'ionicons/icons';
+import { IonButtons, IonHeader, IonIcon, IonMenuButton, IonPage, IonTab, IonTabBar, IonTabButton, IonTabs, IonTitle, IonToolbar } from '@ionic/react';
+import { playCircle, radio, library } from 'ionicons/icons';
 import { useState } from 'react';
 import Index from './pages/Index/Index';
 import List from './pages/List/List';
@@ -30,15 +30,23 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonTabs>
-        {bar_arr.map(item => {
-          return <IonTab tab={item.tab}>
-            {item.page()}
+        {bar_arr.map((item, idx) => {
+          return <IonTab tab={item.tab} key={idx}>
+            <IonHeader>
+              <IonToolbar>
+                <IonButtons slot="start">
+                  <IonMenuButton autoHide={false}></IonMenuButton>
+                </IonButtons>
+                <IonTitle>{item.name}123</IonTitle>
+              </IonToolbar>
+            </IonHeader>
+            <item.page />
           </IonTab>
         })}
 
         <IonTabBar slot="bottom">
-          {bar_arr.map(item => {
-            return <IonTabButton tab={item.tab}>
+          {bar_arr.map((item, idx) => {
+            return <IonTabButton tab={item.tab} key={idx}>
               <IonIcon icon={item.icon} />
               {item.name}
             </IonTabButton>
