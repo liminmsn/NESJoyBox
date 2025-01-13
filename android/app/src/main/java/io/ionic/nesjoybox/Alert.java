@@ -12,16 +12,17 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "Alert")
 public class Alert extends Plugin {
     @PluginMethod()
-    public void echo(PluginCall call) throws InterruptedException {
+    public void echo(PluginCall call){
         Context content = getContext();
 
-        String val = call.getString("value");
+        Object val = call.getString("value");
 
         AlertDialog alert =  new AlertDialog.Builder(content)
                 .setView(R.layout.custom_dialog_layout) // 自定义布局
                 .create();
-        Thread.sleep(1000);
         alert.show();
+
+
 
         JSObject ret = new JSObject();
         ret.put("value", val);

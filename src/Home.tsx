@@ -33,10 +33,7 @@ const Home: React.FC = () => {
         {bar_arr.map((item, idx) => {
           return <IonTab tab={item.tab} key={idx}>
             <IonHeader>
-              <IonToolbar>
-                <IonButtons slot="start">
-                  <IonMenuButton autoHide={false}></IonMenuButton>
-                </IonButtons>
+              <IonToolbar style={{ 'display': item.name == '' ? 'none' : '' }}>
                 <IonTitle>{item.name}</IonTitle>
               </IonToolbar>
             </IonHeader>
