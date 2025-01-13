@@ -11,7 +11,6 @@ export default function Index() {
         }
     }
     return <IonContent>
-        <IonButton onClick={() => clickMe(0)}>打开相机</IonButton>
         <IonButton onClick={() => clickMe(1)}>显示弹窗</IonButton>
     </IonContent>
 }

@@ -32,15 +32,12 @@ const Home: React.FC = () => {
       <IonTabs>
         {bar_arr.map((item, idx) => {
           return <IonTab tab={item.tab} key={idx}>
-            <IonHeader>
-              <IonToolbar style={{ 'display': item.name == '' ? 'none' : '' }}>
-                <IonTitle>{item.name}</IonTitle>
-              </IonToolbar>
-            </IonHeader>
-            <item.page />
+            <IonPage>
+              <item.page />
+            </IonPage>
           </IonTab>
         })}
-
+        {/* 底部tab栏按钮 */}
         <IonTabBar slot="bottom">
           {bar_arr.map((item, idx) => {
             return <IonTabButton tab={item.tab} key={idx}>
