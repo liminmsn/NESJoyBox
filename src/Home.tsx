@@ -1,4 +1,4 @@
-import { IonButtons, IonHeader, IonIcon, IonMenuButton, IonPage, IonTab, IonTabBar, IonTabButton, IonTabs, IonTitle, IonToolbar } from '@ionic/react';
+import { IonIcon, IonPage, IonTab, IonTabBar, IonTabButton, IonTabs, IonText } from '@ionic/react';
 import { playCircle, radio, library } from 'ionicons/icons';
 import { useState } from 'react';
 import Index from './pages/Index/Index';
@@ -42,7 +42,9 @@ const Home: React.FC = () => {
           {bar_arr.map((item, idx) => {
             return <IonTabButton tab={item.tab} key={idx}>
               <IonIcon icon={item.icon} />
-              {item.name}
+              <IonText>
+                {item.name}
+              </IonText>
             </IonTabButton>
           })}
         </IonTabBar>
