@@ -1,7 +1,8 @@
 package io.ionic.nesjoybox.plugins.router;
-
 import android.app.Activity;
+import android.content.Intent;
 
+import com.getcapacitor.BridgeActivity;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
@@ -13,10 +14,17 @@ import io.ionic.nesjoybox.AppContext;
 
 @CapacitorPlugin
 public class Router extends Plugin {
-    HashMap<String,Class<? extends Activity>> page_list = new HashMap<>();
     @PluginMethod
-    void ToPage(PluginCall call){
-
-        AppContext.getAppPageMap().map_page.get("");
+    public void openPage(PluginCall call) {
+        String page_name = call.getString("url");
+        if (page_name != null) {
+            Class<? extends Activity> page_class = AppContext.getAppPageMap().map_page.get(page_name);
+            if (page_class != null) {
+                BridgeActivity bridgeActivity = AppContext.getBridge();
+                Intent intent = new Intent(bridgeActivity, page_class);
+                bridgeActivity.startActivity(intent);
+            }
+        }
+        call.resolve();
     }
 }

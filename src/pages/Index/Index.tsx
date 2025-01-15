@@ -1,12 +1,13 @@
 import { IonButton, IonContent } from "@ionic/react";
-import Alert from "../../plugin/Alert";
+import { Alert, Router } from "../../plugin/Plugins";
 
 export default function Index() {
     async function clickMe(item: number) {
         if (item == 0) {
+            const val = await Router.openPage({ url: "HLSPlay" });
         }
         if (item == 1) {
-            const val = await Alert.echo({ value: "Hello World" });
+            const val = await Alert.showTips({ value: "Hello World" });
             console.log(val);
         }
     }

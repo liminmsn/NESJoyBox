@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import io.ionic.nesjoybox.R;
 
-public class HSLPlay extends AppCompatActivity {
+public class HLSPlay extends AppCompatActivity {
     VideoView view;
 
     @Override

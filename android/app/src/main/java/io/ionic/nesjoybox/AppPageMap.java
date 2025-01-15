@@ -12,7 +12,7 @@ public class AppPageMap {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             //添加视频原生页面
             list_page.forEach(item -> {
-                map_page.put(item.getName(), item);
+                map_page.put(item.getSimpleName(), item);
             });
         }
         System.out.println(map_page.size());
