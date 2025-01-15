@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".modules.HLSPlay"
+            android:name=".modules.HLSPlay.HLSPlay"
             android:label="HLSPlay">
         </activity>
 

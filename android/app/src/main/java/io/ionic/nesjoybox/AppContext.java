@@ -1,13 +1,10 @@
 package io.ionic.nesjoybox;
 
-import android.os.Build;
-
 import com.getcapacitor.BridgeActivity;
 
-import java.io.Console;
 import java.util.List;
 
-import io.ionic.nesjoybox.modules.HLSPlay;
+import io.ionic.nesjoybox.modules.HLSPlay.HLSPlay;
 
 public class AppContext {
     static AppContext I;
