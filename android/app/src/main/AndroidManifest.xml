@@ -22,10 +22,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:name=".modules.HLSPlay.HLSPlay"
             android:label="HLSPlay">
         </activity>
-
 
 
         <provider
