@@ -7,6 +7,6 @@ public class MainActivity extends BridgeActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new MainPlugins(this::registerPlugins);
+        new AppContext(this);
     }
 }
