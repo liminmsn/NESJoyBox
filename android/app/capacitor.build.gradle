@@ -9,6 +9,7 @@ android {
 
 apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
     implementation project(':capacitor-app')
     implementation project(':capacitor-haptics')
     implementation project(':capacitor-keyboard')
