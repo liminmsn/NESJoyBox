@@ -8,14 +8,14 @@ import {
   IonText,
 } from "@ionic/react";
 import { radioOutline, gridOutline, libraryOutline } from "ionicons/icons";
-import { useState } from "react";
+import { useRef } from "react";
 import Index from "./pages/Index/Index";
 import List from "./pages/List/List";
 import About from "./pages/About/About";
 import i18n from "./i18n/i18n";
 
 const Home: React.FC = () => {
-  const [bar_arr] = useState([
+  const bar_arr = useRef([
     {
       tab: "home",
       icon: radioOutline,
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonTabs>
-        {bar_arr.map((item, idx) => {
+        {bar_arr.current.map((item, idx) => {
           return (
             <IonTab tab={item.tab} key={idx}>
               <IonPage>
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
         })}
         {/* 底部tab栏按钮 */}
         <IonTabBar slot="bottom">
-          {bar_arr.map((item, idx) => {
+          {bar_arr.current.map((item, idx) => {
             return (
               <IonTabButton tab={item.tab} key={idx}>
                 <IonIcon icon={item.icon} />
