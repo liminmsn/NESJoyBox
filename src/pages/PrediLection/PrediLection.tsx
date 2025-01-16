@@ -12,24 +12,25 @@ import { useRef } from "react";
 import { timeOutline, bookmarksOutline, constructOutline } from 'ionicons/icons';
 import PlayHistroy from "./children/PlayHistroy";
 import { Route, useHistory } from "react-router";
+import i18n from "../../i18n/i18n";
 
 export default function PrediLection() {
   const predil_ection_arr = useRef([
     [
       {
         icon: timeOutline,
-        label: '播放记录',
+        label: i18n.t("predilection.card.1"),
         path: "/play_histroy"
       },
       {
         icon: bookmarksOutline,
-        label: '我的收藏',
-        path: "/play_histroy"
+        label: i18n.t("predilection.card.2"),
+        path: "/book_marks"
       },
       {
         icon: constructOutline,
-        label: '设置',
-        path: "/play_histroy"
+        label: i18n.t("predilection.card.3"),
+        path: "/settings"
       },
     ]
   ]);

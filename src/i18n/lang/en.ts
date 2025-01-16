@@ -10,6 +10,11 @@ export default {
     },
     predilection: {
       title: "PreDilection",
+      card:{
+        "1":"PlayHistory",
+        "2":"MyBookMarks",
+        "3":"Settings",
+      }
     },
     about: {
       title: "About",

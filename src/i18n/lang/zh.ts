@@ -10,6 +10,11 @@ export default {
     },
     predilection: {
       title: "偏好",
+      card:{
+        "1":"播放历史",
+        "2":"我的收藏",
+        "3":"设置",
+      }
     },
     about: {
       title: "关于",

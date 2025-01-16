@@ -33,6 +33,8 @@ import "@ionic/react/css/palettes/dark.system.css";
 /* Theme variables */
 import "./theme/variables.css";
 import PlayHistroy from "./pages/PrediLection/children/PlayHistroy";
+import BookMarks from "./pages/PrediLection/children/BookMarks";
+import Settings from "./pages/PrediLection/children/Settings";
 
 setupIonicReact();
 
@@ -41,7 +43,15 @@ const children_page_arr = [
   {
     path: '/play_histroy',
     comp: PlayHistroy
-  }
+  },
+  {
+    path: '/book_marks',
+    comp: BookMarks
+  },
+  {
+    path: '/settings',
+    comp: Settings
+  },
 ];
 
 const App: React.FC = () => (
