@@ -10,9 +10,14 @@
 .About_content h1 {
     margin: 0 !important;
     padding-left: 10pt;
-    color: red;
+}
+.About_content p {
+    margin: 0!important;
+    padding-left: 10pt;
 }
 
 .ms {
+    padding-right: 10pt;
+    font-size: 16pt;
     text-align: right;
 }
