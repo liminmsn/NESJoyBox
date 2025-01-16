@@ -1,3 +1,18 @@
-.h1{
-    text-align: center;
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 10pt;
+    padding-block: 10pt;
+    /* background-color: bisque; */
+}
+
+.About_content h1 {
+    margin: 0 !important;
+    padding-left: 10pt;
+    color: red;
+}
+
+.ms {
+    text-align: right;
 }

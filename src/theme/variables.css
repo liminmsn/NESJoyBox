@@ -1,2 +1,17 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+@font-face {
+    font-family: "DancingScript-VariableFont_wght";
+    src: url("/public/fonts/DancingScript-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "qtmk";
+    src: url("/public/fonts/千图马克手写体.ttf") format("truetype");
+}
+
+:root {
+    * {
+        font-family: "DancingScript-VariableFont_wght" , "qtmk";
+    }
+}

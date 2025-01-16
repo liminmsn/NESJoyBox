@@ -1,5 +1,5 @@
 import { IonIcon, IonPage, IonTab, IonTabBar, IonTabButton, IonTabs, IonText } from '@ionic/react';
-import { playCircle, radio, library } from 'ionicons/icons';
+import { radioOutline, gridOutline, libraryOutline } from 'ionicons/icons';
 import { useState } from 'react';
 import Index from './pages/Index/Index';
 import List from './pages/List/List';
@@ -9,22 +9,22 @@ const Home: React.FC = () => {
   const [bar_arr] = useState([
     {
       tab: 'home',
-      name: '首页',
-      icon: playCircle,
+      name: '广播',
+      icon: radioOutline,
       page: Index
     },
     {
       tab: 'list',
-      name: '列表',
-      icon: radio,
+      name: '偏好',
+      icon: gridOutline,
       page: List
     },
     {
       tab: 'about',
       name: '关于',
-      icon: library,
+      icon: libraryOutline,
       page: About
-    }
+    },
   ])
 
   return (
