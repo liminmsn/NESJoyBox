@@ -5,21 +5,35 @@ import {
   IonCol,
   IonContent,
   IonGrid,
+  IonIcon,
   IonRow,
 } from "@ionic/react";
-import { useRef } from "react";
 import "./style.css";
+import { useRef } from "react";
+import { timeOutline, bookmarksOutline, constructOutline } from 'ionicons/icons'
 
 export default function PrediLection() {
-  const predil_ection_arr = useRef();
+  const predil_ection_arr = useRef([
+    [
+      {
+        icon: timeOutline,
+        label: '播放记录'
+      },
+      {
+        icon: bookmarksOutline,
+        label: '我的收藏'
+      },
+      {
+        icon: constructOutline,
+        label: '设置'
+      },
+    ]
+  ]);
   return (
-    <IonContent>
+    <IonContent className="PrediLection">
       <IonGrid>
         <YRow
-          card_arr={[
-            ["1", "2", "3", "4"],
-            ["4", "5", "6", "7"],
-          ]}
+          card_arr={predil_ection_arr.current}
         />
       </IonGrid>
     </IonContent>
@@ -30,41 +44,36 @@ export default function PrediLection() {
 function YRow({ card_arr }: YRowProps) {
   return (
     <IonRow>
-      {card_arr.map((card_s: string[], i) => {
-        return <YCol card_arr={card_s} key={i} />;
+      {card_arr.map((card_s: CardData[]) => {   //row
+        return card_s.map((card_data, key) => { //col
+          return <IonCol size="1" key={key}>
+            <YCard card={card_data} />
+          </IonCol>
+        })
       })}
     </IonRow>
   );
-}
-
-/**列 */
-function YCol({ card_arr }: YColProps) {
-  return <>
-    {card_arr.map((card_data, i) => {
-      return (
-        <IonCol size="1" key={i}>
-          <YCard card={card_data} />
-        </IonCol>
-      );
-    })}
-  </>;
 }
 
 /**卡片 */
 function YCard({ card }: YCardProps) {
   return (
     <IonCard>
-      <IonCardContent>{card}</IonCardContent>
+      <IonCardContent>
+        <IonIcon icon={card.icon} size="large" />
+        <span style={{ fontSize: '12pt', marginTop: "5pt" }}>{card.label}</span>
+      </IonCardContent>
     </IonCard>
   );
 }
 
+type CardData = {
+  icon: string;
+  label: string
+};
 interface YCardProps {
-  card: string;
-}
-interface YColProps {
-  card_arr: string[];
+  card: CardData;
 }
 interface YRowProps {
-  card_arr: string[][];
+  card_arr: CardData[][];
 }
