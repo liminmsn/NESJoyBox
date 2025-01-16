@@ -31,7 +31,7 @@ function YRow({ card_arr }: YRowProps) {
   return (
     <IonRow>
       {card_arr.map((card_s: string[], i) => {
-        return <YCol card_arr={card_s} />;
+        return <YCol card_arr={card_s} key={i} />;
       })}
     </IonRow>
   );
@@ -39,17 +39,15 @@ function YRow({ card_arr }: YRowProps) {
 
 /**列 */
 function YCol({ card_arr }: YColProps) {
-  return (
-    <>
-      {card_arr.map((card_data, i) => {
-        return (
-          <IonCol size="1">
-            <YCard card={card_data} />
-          </IonCol>
-        );
-      })}
-    </>
-  );
+  return <>
+    {card_arr.map((card_data, i) => {
+      return (
+        <IonCol size="1" key={i}>
+          <YCard card={card_data} />
+        </IonCol>
+      );
+    })}
+  </>;
 }
 
 /**卡片 */
