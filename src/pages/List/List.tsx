@@ -1,8 +1,8 @@
 import { IonContent } from "@ionic/react";
-import { t } from "i18next";
+import i18n from '../../i18n/i18n';
 
 export default function List() {
     return <IonContent>
-        <h1>{t("hello")}</h1>
+        <h1>{i18n.t('hello')}</h1>
     </IonContent>
 }
