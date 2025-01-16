@@ -1,16 +1,72 @@
-import { IonButton, IonContent } from "@ionic/react";
-import { useState } from "react";
-import i18n from "../../i18n/i18n";
+import {
+  IonButton,
+  IonCard,
+  IonCardContent,
+  IonCol,
+  IonContent,
+  IonGrid,
+  IonRow,
+} from "@ionic/react";
+import { useRef } from "react";
+import "./style.css";
 
 export default function PrediLection() {
-  const changeLanguage = (lng: string) => {
-    localStorage.setItem("lang", lng);
-    window.location.reload();
-  };
+  const predil_ection_arr = useRef();
   return (
     <IonContent>
-      <IonButton onClick={() => changeLanguage("zh")}>zh</IonButton>
-      <IonButton onClick={() => changeLanguage("en")}>en</IonButton>
+      <IonGrid>
+        <YRow
+          card_arr={[
+            ["1", "2", "3", "4"],
+            ["4", "5", "6", "7"],
+          ]}
+        />
+      </IonGrid>
     </IonContent>
   );
+}
+
+/**行 */
+function YRow({ card_arr }: YRowProps) {
+  return (
+    <IonRow>
+      {card_arr.map((card_s: string[], i) => {
+        return <YCol card_arr={card_s} />;
+      })}
+    </IonRow>
+  );
+}
+
+/**列 */
+function YCol({ card_arr }: YColProps) {
+  return (
+    <>
+      {card_arr.map((card_data, i) => {
+        return (
+          <IonCol size="1">
+            <YCard card={card_data} />
+          </IonCol>
+        );
+      })}
+    </>
+  );
+}
+
+/**卡片 */
+function YCard({ card }: YCardProps) {
+  return (
+    <IonCard>
+      <IonCardContent>{card}</IonCardContent>
+    </IonCard>
+  );
+}
+
+interface YCardProps {
+  card: string;
+}
+interface YColProps {
+  card_arr: string[];
+}
+interface YRowProps {
+  card_arr: string[][];
 }

@@ -1,0 +1,9 @@
+ion-grid {
+    --ion-grid-columns: 2;
+    --ion-grid-column-padding: 5pt;
+}
+
+ion-card {
+    height: calc(100vw / 3);
+    margin: 0;
+}

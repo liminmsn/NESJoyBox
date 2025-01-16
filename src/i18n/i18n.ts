@@ -19,4 +19,9 @@ i18n.use(initReactI18next).init({
   },
 });
 
+export const changeLanguage = (lng: "zh" | "en") => {
+  localStorage.setItem("lang", lng);
+  window.location.reload();
+};
+
 export default i18n;
