@@ -1,5 +1,5 @@
 import { Redirect, Route } from "react-router-dom";
-import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
+import { IonApp, IonNav, IonRouterOutlet, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./Home";
 
@@ -32,18 +32,32 @@ import "@ionic/react/css/palettes/dark.system.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import PlayHistroy from "./pages/PrediLection/children/PlayHistroy";
 
 setupIonicReact();
+
+//其它页面
+const children_page_arr = [
+  {
+    path: '/play_histroy',
+    comp: PlayHistroy
+  }
+];
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
+      {children_page_arr.map((page, key) => {
+        return <Route path={page.path} key={key}>
+          <page.comp />
+        </Route>
+      })}
       <IonRouterOutlet>
-        <Route exact path="/home">
+        <Route exact path="/main">
           <Home />
         </Route>
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Redirect to="/main" />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

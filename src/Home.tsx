@@ -46,7 +46,7 @@ const Home: React.FC = () => {
           );
         })}
         {/* 底部tab栏按钮 */}
-        <IonTabBar slot="bottom">
+        <IonTabBar slot="bottom" tabIndex={2}>
           {bar_arr.current.map((item, idx) => {
             return (
               <IonTabButton tab={item.tab} key={idx}>
