@@ -2,15 +2,14 @@ export default {
   translation: {
     tab_btn_label: {
       home: "Home",
-      list: "List",
+      predilection: "PrediLection",
       about: "About",
     },
     index: {
       title: "Home",
     },
-    list: {
-      title: "List",
-      list: "List",
+    predilection: {
+      title: "PreDilection",
     },
     about: {
       title: "About",

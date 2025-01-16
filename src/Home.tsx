@@ -10,7 +10,7 @@ import {
 import { radioOutline, gridOutline, libraryOutline } from "ionicons/icons";
 import { useRef } from "react";
 import Index from "./pages/Index/Index";
-import List from "./pages/List/List";
+import PrediLection from "./pages/PrediLection/PrediLection";
 import About from "./pages/About/About";
 import i18n from "./i18n/i18n";
 
@@ -22,9 +22,9 @@ const Home: React.FC = () => {
       page: Index,
     },
     {
-      tab: "list",
+      tab: "predilection",
       icon: gridOutline,
-      page: List,
+      page: PrediLection,
     },
     {
       tab: "about",
