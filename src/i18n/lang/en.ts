@@ -1,12 +1,12 @@
 export default {
   translation: {
     tab_btn_label: {
-      home: "Home",
+      home: "Radio",
       predilection: "PrediLection",
       about: "About",
     },
     index: {
-      title: "Home",
+      title: "Radio",
     },
     predilection: {
       title: "PreDilection",

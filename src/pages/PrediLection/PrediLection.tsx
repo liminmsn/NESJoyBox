@@ -6,6 +6,7 @@ import {
   IonContent,
   IonGrid,
   IonIcon,
+  IonRippleEffect,
   IonRow,
 } from "@ionic/react";
 import "./style.css";
@@ -58,7 +59,8 @@ function YRow({ card_arr }: YRowProps) {
 /**卡片 */
 function YCard({ card }: YCardProps) {
   return (
-    <IonCard>
+    <IonCard className="ion-activatable ripple-parent">
+      <IonRippleEffect></IonRippleEffect>
       <IonCardContent>
         <IonIcon icon={card.icon} size="large" />
         <span style={{ fontSize: '12pt', marginTop: "5pt" }}>{card.label}</span>

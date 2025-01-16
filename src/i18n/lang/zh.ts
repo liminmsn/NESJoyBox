@@ -1,12 +1,12 @@
 export default {
   translation: {
     tab_btn_label: {
-      home: "首页",
+      home: "广播",
       predilection: "偏好",
       about: "关于",
     },
     index: {
-      title: "首页",
+      title: "广播",
     },
     predilection: {
       title: "偏好",
