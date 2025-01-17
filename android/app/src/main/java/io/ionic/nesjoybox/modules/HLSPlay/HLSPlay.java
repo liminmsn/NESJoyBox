@@ -14,13 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-
-import com.getcapacitor.JSObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,8 +51,8 @@ public class HLSPlay extends AppCompatActivity {
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
-//        Uri uri = Uri.parse("https://live.wjyanghu.com/live/CH1.m3u8");
-//        video_view.setVideoURI(uri);
+        //        Uri uri = Uri.parse("https://live.wjyanghu.com/live/CH1.m3u8");
+        //        video_view.setVideoURI(uri);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -72,6 +68,7 @@ public class HLSPlay extends AppCompatActivity {
         //播放出错就提示
         video_view.setOnErrorListener((mp, what, extra) -> {
             Toast.makeText(this, "播放出错", Toast.LENGTH_SHORT).show();
+            finish();
             return true;
         });
         //视频缓存卡住
@@ -83,9 +80,9 @@ public class HLSPlay extends AppCompatActivity {
                     layout_loading.setVisibility(View.VISIBLE);
                     break;
                 case MediaPlayer.MEDIA_INFO_BUFFERING_END:
-                    layout_loading.setVisibility(View.GONE);
                     // 视频卡住结束，继续播放
                     // 可以在这里添加继续播放视频的逻辑
+                    layout_loading.setVisibility(View.GONE);
                     break;
             }
             return false;
