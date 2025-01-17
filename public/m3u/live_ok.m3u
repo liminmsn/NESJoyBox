@@ -2,7 +2,6 @@
 http://live.shaoxing.com.cn/video/s10001-sxhb/index.m3u8
 #EXTINF:-1,绍兴公共频道
 http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8
-#EXTINF:-1,绍兴文化影视
 #EXTINF:-1,磐安新闻综合
 http://hlsv2.quklive.com/live/1626400915947070/index.m3u8
 #EXTINF:-1,磐安文化生活
@@ -109,7 +108,6 @@ https://gcalic.v.myalicdn.com/gc/wgw05_1/index.m3u8?contentid=2820180516001
 https://gcalic.v.myalicdn.com/gc/yxhcnh_1/index.m3u8?contentid=2820180516001
 #EXTINF:-1,黟县西递牌坊
 https://gcalic.v.myalicdn.com/gc/yxxdpf_1/index.m3u8?contentid=2820180516001
-
 #EXTINF:-1,黄山卧云峰
 https://gcalic.v.myalicdn.com/gc/hswlf_1/index.m3u8?contentid=2820180516001
 #EXTINF:-1,黄山梦笔生花
@@ -164,7 +162,6 @@ https://gctxyc.liveplay.myqcloud.com/gc/mdjxxmhjyxj_1/index.m3u8?contentid=28201
 https://gcalic.v.myalicdn.com/gc/bsszjs_1/index.m3u8?contentid=2820180516001
 #EXTINF:-1,亚洲新闻
 https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8
-
 #EXTINF:-1,明珠台
 https://pi.0472.org/tv/mzt.php?auth=202311030915
 #EXTINF:-1,澳视澳门

@@ -1,0 +1,21 @@
+.Index {}
+
+.Index ion-card {
+    margin: 0;
+    height: calc(100vh / 6);
+    background: radial-gradient(rgb(163, 225, 250) 10%, rgba(0, 84, 233, 1) 90%);
+}
+
+.Index ion-card-title {
+    font-size: 12pt;
+}
+
+.Index ion-card ion-card-header {
+    padding: 8pt;
+
+}
+
+.Index ion-card-content {
+    padding-inline: 4pt;
+    font-size: 5pt;
+}
