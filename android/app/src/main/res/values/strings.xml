@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">NESJoyBox</string>
-    <string name="title_activity_main">NESJoyBox</string>
-    <string name="package_name">io.ionic.nesjoybox</string>
-    <string name="custom_url_scheme">io.ionic.nesjoybox</string>
+    <string name="app_name">HLSPlay</string>
+    <string name="title_activity_main"> </string>
+    <string name="package_name">io.ionic.moneybox</string>
+    <string name="custom_url_scheme">io.ionic.moneybox</string>
     <string name="title">这是一个自定义对话框！</string>
     <string name="confirm">确认</string>
     <string name="btn">Play</string>

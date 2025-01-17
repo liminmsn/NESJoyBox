@@ -2,13 +2,13 @@ package io.ionic.nesjoybox;
 
 import java.util.HashMap;
 import java.util.List;
-import android.app.Activity;
 import android.os.Build;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AppPageMap {
-    public HashMap<String, Class<? extends Activity>> map_page = new HashMap<>();
+    public HashMap<String, Class<? extends AppCompatActivity>> map_page = new HashMap<>();
 
-    public AppPageMap(List<Class<? extends Activity>> list_page) {
+    public AppPageMap(List<Class<? extends AppCompatActivity>> list_page) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             //添加视频原生页面
             list_page.forEach(item -> {
