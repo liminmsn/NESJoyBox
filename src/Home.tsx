@@ -28,7 +28,7 @@ const Home: React.FC = () => {
     {
       tab: "about",
       icon: libraryOutline,
-      page: <About/>
+      page: <About />
     },
   ];
 

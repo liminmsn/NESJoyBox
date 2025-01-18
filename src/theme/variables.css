@@ -11,7 +11,25 @@ http://ionicframework.com/docs/theming/ */
 }
 
 :root {
-    * {
-        font-family: "qtmk";
-    }
+    font-size: "qtmk";
+    --ion-tab-bar-color-selected: #5D8736ff;
+    --ion-background-color: #F4FFC3;
+}
+
+ion-card {
+    margin: 0;
+    min-height: calc(100vh / 6);
+    background-color: #5D8736ff;
+}
+
+ion-card-title {
+    font-size: 12pt;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #F4FFC3;
+}
+
+ion-card-content {
+    color: #F4FFC3;
 }
