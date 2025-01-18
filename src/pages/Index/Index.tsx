@@ -4,13 +4,14 @@ import {
   IonCardHeader, IonCardTitle,
   IonCol,
   IonContent,
-  IonGrid, IonRow,
+  IonGrid, IonIcon, IonRippleEffect, IonRow,
   IonText
 } from "@ionic/react";
 import { Router } from "../../plugin/Plugins";
 import { getM3u, M3uItem } from "../../tool/loadFile";
 import { useEffect, useState } from "react";
 import { Capacitor } from "@capacitor/core";
+import { book, bookmark, bookmarkOutline, colorFill, eyeSharp, playCircleSharp } from 'ionicons/icons'
 import "./style.css";
 
 export default function Index() {
@@ -47,15 +48,24 @@ export default function Index() {
                   <IonCol
                     key={i}
                     size={String(12 / item.length)}
-                    onClick={() => onPlay(card.url)}
                   >
-                    <IonCard>
+                    <IonCard className="ion-activatable ripple-parent">
+                      <IonRippleEffect></IonRippleEffect>
                       <IonCardHeader>
-                        <IonCardTitle>{card.name}</IonCardTitle>
+                        <IonCardTitle>
+                          <IonText>{card.name}</IonText>
+                        </IonCardTitle>
                       </IonCardHeader>
                       <IonCardContent>
                         <IonText>{card.url}</IonText>
                       </IonCardContent>
+                      <div className="info">
+                        <IonText>ERR:0</IonText>
+                      </div>
+                      <div className="play">
+                        <IonIcon icon={bookmarkOutline} size="large" />
+                        <IonIcon onClick={() => onPlay(card.url)} icon={playCircleSharp} size="large" />
+                      </div>
                     </IonCard>
                   </IonCol>
                 );
@@ -64,8 +74,6 @@ export default function Index() {
           );
         })}
       </IonGrid>
-      {/* <IonButton onClick={() => clickMe(0)}>播放推流视频</IonButton>
-      <IonButton onClick={() => clickMe(1)}>显示弹窗</IonButton> */}
     </IonContent>
   );
 }
