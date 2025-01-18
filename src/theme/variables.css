@@ -18,7 +18,6 @@ http://ionicframework.com/docs/theming/ */
 
 ion-card {
     margin: 0;
-    min-height: calc(100vh / 6);
     background-color: #5D8736ff;
 }
 

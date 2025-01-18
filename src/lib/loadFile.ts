@@ -1,3 +1,12 @@
+export class M3uItem {
+  url: string;
+  name: string;
+  constructor(url: string, name: string, public books = false, public play = 0, public err = 0) {
+    this.url = url;
+    this.name = name;
+  }
+}
+
 export async function loadLocationFile(url: string) {
   const res = await fetch(url, { method: "GET" });
   if (res.ok && res.headers.get("content-type") !== "text/html") {
@@ -6,7 +15,7 @@ export async function loadLocationFile(url: string) {
   return { ok: false, data: { info: "Error fetching the file!" } };
 }
 
-export async function getM3u() {
+async function getM3u() {
   const res = await loadLocationFile("/m3u/live_ok.m3u");
   if (res.ok && res instanceof Response) {
     const lines = (await res.text()).split("\n");
@@ -26,6 +35,17 @@ export async function getM3u() {
     return m3u_arr;
   } else {
     return [];
+  }
+}
+
+export class UsrData {
+  play_list: M3uItem[][] = [];
+  play_books: M3uItem[] = [];
+  play_histry: M3uItem[] = [];
+  static setPlayList(list: M3uItem[][]) {
+    const obj = new UsrData();
+    obj.play_list = list;
+    return obj;
   }
 }
 
@@ -52,27 +72,5 @@ export const storage = {
   setUsr(usr: UsrData): UsrData {
     localStorage.setItem(UsrData.name, JSON.stringify(usr));
     return this.getUsr()!;
-  }
-}
-
-export class UsrData {
-  play_list: M3uItem[][] = [];
-  play_books: M3uItem[][] = [];
-  play_histry: M3uItem[][] = [];
-  static setPlayList(list: M3uItem[][]) {
-    const obj = new UsrData();
-    obj.play_list = list;
-    return obj;
-  }
-}
-
-export class M3uItem {
-  url: string;
-  name: string;
-  books: boolean;
-  constructor(url: string, name: string, books = false) {
-    this.url = url;
-    this.name = name;
-    this.books = books
   }
 }

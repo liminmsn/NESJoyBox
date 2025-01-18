@@ -8,7 +8,7 @@ i18n.use(initReactI18next).init({
     let lang = localStorage.getItem("lang");
     return lang ? lang : "en";
   })(),
-  debug: true,
+  debug: false,
   fallbackLng: "zh",
   resources: {
     en,

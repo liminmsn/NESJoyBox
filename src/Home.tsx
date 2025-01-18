@@ -12,13 +12,21 @@ import Index from "./pages/Index/Index";
 import PrediLection from "./pages/PrediLection/PrediLection";
 import About from "./pages/About/About";
 import i18n from "./i18n/i18n";
+import { Dispatch, SetStateAction, useState } from "react";
+import { storage, UsrData } from "./lib/loadFile";
+
+export interface HomePropType {
+  usr: UsrData;
+  setUsr: Dispatch<SetStateAction<UsrData>>
+}
 
 const Home: React.FC = () => {
+  const [usr, setUsr] = useState(storage.getUsr()!);
   const bar_arr = [
     {
       tab: "home",
       icon: radioOutline,
-      page: <Index />
+      page: <Index usr={usr} setUsr={setUsr} />
     },
     {
       tab: "predilection",

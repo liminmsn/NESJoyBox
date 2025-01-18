@@ -1,9 +1,9 @@
-
 .Index ion-card-content {
     padding-inline: 4pt;
     font-size: 5pt;
     color: #A9C46C;
-    height: 5vh;
+    overflow-y: scroll;
+    max-height: 5vh;
 }
 
 
