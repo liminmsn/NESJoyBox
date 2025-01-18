@@ -8,6 +8,7 @@ export async function loadLocationFile(url: string) {
 
 export async function getM3u() {
   const res = await loadLocationFile("/m3u/live_ok.m3u");
+  console.log('yzt',res);
   if (res.ok && res instanceof Response) {
     const lines = (await res.text()).split("\n");
     const m3u_arr: M3uItem[] = [];

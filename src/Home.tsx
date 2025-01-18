@@ -1,14 +1,13 @@
 import {
-  IonIcon,
+  IonContent, IonIcon,
   IonPage,
   IonTab,
   IonTabBar,
   IonTabButton,
   IonTabs,
-  IonText,
+  IonText
 } from "@ionic/react";
 import { radioOutline, gridOutline, libraryOutline } from "ionicons/icons";
-import { useRef } from "react";
 import Index from "./pages/Index/Index";
 import PrediLection from "./pages/PrediLection/PrediLection";
 import About from "./pages/About/About";
@@ -19,17 +18,17 @@ const Home: React.FC = () => {
     {
       tab: "home",
       icon: radioOutline,
-      page: <Index/>,
+      page: <Index />
     },
     {
       tab: "predilection",
       icon: gridOutline,
-      page: <PrediLection/>,
+      page: <PrediLection />,
     },
     {
       tab: "about",
       icon: libraryOutline,
-      page: <About/>,
+      page: <About/>
     },
   ];
 
@@ -37,13 +36,11 @@ const Home: React.FC = () => {
     <IonPage>
       <IonTabs>
         {bar_arr.map((item, idx) => {
-          return (
-            <IonTab tab={item.tab} key={idx}>
-              <IonPage>
-                {item.page}
-              </IonPage>
-            </IonTab>
-          );
+          return <IonTab tab={item.tab} key={idx}>
+            <IonContent>
+              {item.page}
+            </IonContent>
+          </IonTab>
         })}
         <IonTabBar slot="bottom">
           {bar_arr.map((item, idx) => {

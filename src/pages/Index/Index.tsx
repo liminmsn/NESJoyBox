@@ -1,16 +1,11 @@
 import {
-  IonButton,
   IonCard,
   IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
+  IonCardHeader, IonCardTitle,
   IonCol,
   IonContent,
-  IonGrid,
-  IonHeader,
-  IonRow,
-  IonText,
+  IonGrid, IonRow,
+  IonText
 } from "@ionic/react";
 import { Router } from "../../plugin/Plugins";
 import { getM3u, M3uItem } from "../../tool/loadFile";
@@ -32,16 +27,14 @@ export default function Index() {
 
   const [state, setState] = useState<M3uItem[][]>([]);
   useEffect(() => {
-    return function () {
-      getM3u().then((res) => {
-        const grid = 3;
-        const grid_arr = [] as any[];
-        for (let i = 0; i < res.length; i += grid) {
-          grid_arr.push(res.slice(i, i + grid));
-        }
-        setState(grid_arr);
-      });
-    };
+    getM3u().then((res) => {
+      const grid = 3;
+      const grid_arr = [] as any[];
+      for (let i = 0; i < res.length; i += grid) {
+        grid_arr.push(res.slice(i, i + grid));
+      }
+      setState(grid_arr);
+    });
   }, []);
   return (
     <IonContent className="Index">
