@@ -33,6 +33,9 @@ import "@ionic/react/css/palettes/dark.system.css";
 /* Theme variables */
 import "./theme/variables.css";
 import PlayHistroy from "./pages/PrediLection/children/PlayHistroy";
+import About from "./pages/About/About";
+import Index from "./pages/Index/Index";
+import PrediLection from "./pages/PrediLection/PrediLection";
 
 setupIonicReact();
 
@@ -48,14 +51,10 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       {children_page_arr.map((page, key) => {
-        return <Route path={page.path} key={key}>
-          <page.comp />
-        </Route>
+        return <Route path={page.path} key={key} component={page.comp}/>
       })}
       <IonRouterOutlet>
-        <Route exact path="/main">
-          <Home />
-        </Route>
+        <Route exact path="/main" component={Home} />
         <Route exact path="/">
           <Redirect to="/main" />
         </Route>

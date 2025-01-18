@@ -15,39 +15,38 @@ import About from "./pages/About/About";
 import i18n from "./i18n/i18n";
 
 const Home: React.FC = () => {
-  const bar_arr = useRef([
+  const bar_arr = [
     {
       tab: "home",
       icon: radioOutline,
-      page: Index,
+      page: <Index/>,
     },
     {
       tab: "predilection",
       icon: gridOutline,
-      page: PrediLection,
+      page: <PrediLection/>,
     },
     {
       tab: "about",
       icon: libraryOutline,
-      page: About,
+      page: <About/>,
     },
-  ]);
+  ];
 
   return (
     <IonPage>
       <IonTabs>
-        {bar_arr.current.map((item, idx) => {
+        {bar_arr.map((item, idx) => {
           return (
             <IonTab tab={item.tab} key={idx}>
               <IonPage>
-                <item.page />
+                {item.page}
               </IonPage>
             </IonTab>
           );
         })}
-        {/* 底部tab栏按钮 */}
-        <IonTabBar slot="bottom" tabIndex={2}>
-          {bar_arr.current.map((item, idx) => {
+        <IonTabBar slot="bottom">
+          {bar_arr.map((item, idx) => {
             return (
               <IonTabButton tab={item.tab} key={idx}>
                 <IonIcon icon={item.icon} />
