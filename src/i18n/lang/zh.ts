@@ -2,12 +2,15 @@ export default {
   translation: {
     setting: {
       language: {
-        "1": "语言",
+        "1": "语言设置",
         "2": "选择程序的语言"
       },
       check: {
-        "1": "缓存",
+        "1": "缓存管理",
         "2": "清空App缓存"
+      },
+      version: {
+        "1": "版本号"
       }
     },
     tab_btn_label: {

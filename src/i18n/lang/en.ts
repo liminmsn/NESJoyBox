@@ -8,6 +8,9 @@ export default {
       check: {
         "1": "Cache",
         "2": "Clear App Cache"
+      },
+      version: {
+        "1": "version"
       }
     },
     tab_btn_label: {

@@ -32,6 +32,10 @@ export default function Settings() {
                     <IonLabel>{i18n.t("setting.check.1")}</IonLabel>
                     <IonButton color={"danger"}>{i18n.t("setting.check.2")}</IonButton>
                 </IonItem>
+                <IonItem>
+                    <IonLabel>{i18n.t("setting.version.1")}</IonLabel>
+                    <IonLabel style={{ textAlign: "right" }}>v1.0.1</IonLabel>
+                </IonItem>
             </IonList>
         </IonContent>
     </IonPage >
