@@ -36,7 +36,7 @@ export default function PlayHistroy() {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonList style={{ backgroundColor: "#ffffff00", paddingTop: "0" }}>
+        <IonList style={{ backgroundColor: "#ffffff00", paddingBlock: "0" }}>
           {list!.play_histry.length > 0 ? (
             list?.play_histry.map((item: M3uItem, idx) => {
               return (
