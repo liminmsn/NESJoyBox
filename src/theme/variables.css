@@ -2,8 +2,7 @@
 http://ionicframework.com/docs/theming/ */
 @font-face {
   font-family: "DancingScript-VariableFont_wght";
-  src: url("/public/fonts/DancingScript-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("/public/fonts/DancingScript-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
@@ -12,8 +11,10 @@ http://ionicframework.com/docs/theming/ */
 }
 
 :root {
-  font-size: "qtmk";
+
   --ion-tab-bar-color-selected: #5d8736ff;
+  --ion-text-color: #5d8736ff;
+  --ion-color-primary: currentColor;
   /* --ion-background-color: #F4FFC3; */
 }
 

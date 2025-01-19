@@ -6,7 +6,7 @@ import { initReactI18next } from "react-i18next";
 i18n.use(initReactI18next).init({
   lng: (function () {
     let lang = localStorage.getItem("lang");
-    return lang ? lang : "en";
+    return lang ? lang : "zh";
   })(),
   debug: false,
   fallbackLng: "zh",

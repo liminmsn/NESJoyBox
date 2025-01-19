@@ -12,6 +12,7 @@ import {
 } from "ionicons/icons";
 import play from "@/../public/svg/play-svgrepo-com.svg";
 import { onPlay } from "@/plugin/Plugins";
+import i18n from "@/i18n/i18n";
 
 export default function YItemHistory({
   item,
@@ -40,15 +41,15 @@ export default function YItemHistory({
           icon={trashOutline}
           onClick={() =>
             presentAlert({
-              header: "注意",
-              message: `确认删除${item.name}这条历史记录？`,
+              header: i18n.t("alert.0"),
+              message: `${i18n.t("alert.info0.1")}${item.name}${i18n.t("alert.info0.2")}`,
               buttons: [
                 {
-                  text: "确认",
+                  text: i18n.t("alert.1"),
                   handler: () => onDel(item),
                 },
                 {
-                  text: "取消",
+                  text: i18n.t("alert.2"),
                 },
               ],
             })

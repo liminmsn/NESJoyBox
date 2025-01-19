@@ -10,10 +10,10 @@ export default {
     },
     predilection: {
       title: "PreDilection",
-      card:{
-        "1":"PlayHistory",
-        "2":"MyBookMarks",
-        "3":"Settings",
+      card: {
+        "1": "PlayHistory",
+        "2": "MyBookMarks",
+        "3": "Settings",
       }
     },
     about: {
@@ -33,5 +33,17 @@ export default {
         "3": "End",
       },
     },
+    "alert": {
+      "info0": {
+        "1": "Confirm Deletion",
+        "2": "This historical record?"
+      },
+      "info1": {
+        "1": "Confirm Cancel Collection"
+      },
+      "0": "Attention!",
+      "1": "Confirm",
+      "2": "Cancel"
+    }
   },
 };

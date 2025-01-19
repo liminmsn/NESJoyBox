@@ -55,10 +55,6 @@
   &:nth-child(1) {
     color: var(--ion-color-danger);
   }
-
-  &:nth-child(2) {
-    color: #5d8736ff;
-  }
 }
 
 .y-item .item ion-label {

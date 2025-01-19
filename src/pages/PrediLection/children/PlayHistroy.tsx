@@ -14,6 +14,7 @@ import { M3uItem, storage } from "../../../lib/loadFile";
 import YItemHistory from "@/components/YItemHistory";
 import YNone from "@/components/YNone";
 import { time } from "ionicons/icons";
+import i18n from "@/i18n/i18n";
 
 export default function PlayHistroy() {
   const [list, setList] = useState(storage.getUsr());
@@ -31,7 +32,7 @@ export default function PlayHistroy() {
             <IonIcon icon={time} size="large" />
           </IonButtons>
           <IonTitle>
-            <IonText>History</IonText>
+            <IonText>{i18n.t("predilection.card.1")}</IonText>
           </IonTitle>
         </IonToolbar>
       </IonHeader>

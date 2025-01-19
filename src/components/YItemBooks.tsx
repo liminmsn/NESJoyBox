@@ -13,6 +13,7 @@ import {
 } from "ionicons/icons";
 import play from "@/../public/svg/play-svgrepo-com.svg";
 import { onPlay } from "@/plugin/Plugins";
+import i18n from "@/i18n/i18n";
 
 export default function YItemBooks({
   item,
@@ -42,15 +43,15 @@ export default function YItemBooks({
           icon={bookmarkSharp}
           onClick={() =>
             presentAlert({
-              header: "注意",
+              header: i18n.t("alert.0"),
               message: `确认取消收藏${item.name}？`,
               buttons: [
                 {
-                  text: "确认",
+                  text: i18n.t("alert.1"),
                   handler: () => onDel(item),
                 },
                 {
-                  text: "取消",
+                  text: i18n.t("alert.2"),
                 },
               ],
             })

@@ -4,6 +4,7 @@ import { M3uItem, storage } from "../../../lib/loadFile";
 import YNone from "@/components/YNone";
 import { bookmarks } from "ionicons/icons";
 import YItemBooks from "@/components/YItemBooks";
+import i18n from "@/i18n/i18n";
 
 export default function BookMarks() {
     const [books, setBooks] = useState(storage.getUsr());
@@ -26,7 +27,7 @@ export default function BookMarks() {
                     <IonIcon icon={bookmarks} size="large" />
                 </IonButtons>
                 <IonTitle>
-                    <IonText>Books</IonText>
+                    <IonText>{i18n.t("predilection.card.2")}</IonText>
                 </IonTitle>
             </IonToolbar>
         </IonHeader>
