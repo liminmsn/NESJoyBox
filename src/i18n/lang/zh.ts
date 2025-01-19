@@ -1,5 +1,15 @@
 export default {
   translation: {
+    setting: {
+      language: {
+        "1": "语言",
+        "2": "选择程序的语言"
+      },
+      check: {
+        "1": "缓存",
+        "2": "清空App缓存"
+      }
+    },
     tab_btn_label: {
       home: "广播",
       predilection: "偏好",

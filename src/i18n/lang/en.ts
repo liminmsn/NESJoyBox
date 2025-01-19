@@ -1,5 +1,15 @@
 export default {
   translation: {
+    setting: {
+      language: {
+        "1": "Language",
+        "2": "SetAppLangage"
+      },
+      check: {
+        "1": "Cache",
+        "2": "Clear App Cache"
+      }
+    },
     tab_btn_label: {
       home: "Radio",
       predilection: "PrediLection",
