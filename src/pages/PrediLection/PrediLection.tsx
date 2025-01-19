@@ -1,4 +1,5 @@
 import {
+  IonBadge,
   IonCard,
   IonCardContent,
   IonCol,
@@ -37,12 +38,14 @@ export default function PrediLection({ usr, setUsr }: HomePropType) {
         icon_path: brows,
         label: i18n.t("predilection.card.1"),
         path: "/play_histroy",
+        sum: usr.play_histry.length
       },
       {
         icon: bookmarksOutline,
         icon_path: subscription,
         label: i18n.t("predilection.card.2"),
         path: "/book_marks",
+        sum: usr.play_list.flat(1).filter(item => item.books).length
       },
       {
         icon: constructOutline,
@@ -61,7 +64,7 @@ export default function PrediLection({ usr, setUsr }: HomePropType) {
         <YRow card_arr={predil_ection_arr} />
       </IonGrid>
       <IonList>
-        <IonListHeader>history</IonListHeader>
+        <IonListHeader>{i18n.t("predilection.card.1")}</IonListHeader>
         {
           usr.play_histry.slice(0, 4).map((item, idx) => {
             return <YItemHistory item={item} key={idx} idx={idx} onDel={() => { }} />
@@ -69,7 +72,7 @@ export default function PrediLection({ usr, setUsr }: HomePropType) {
         }
       </IonList>
       <IonList>
-        <IonListHeader>Books</IonListHeader>
+        <IonListHeader>{i18n.t("predilection.card.2")}</IonListHeader>
         {
           usr.play_histry.slice(0, 4).map((item, idx) => {
             return <YItemBooks item={item} key={idx} idx={idx} onDel={() => { }} />
@@ -113,7 +116,10 @@ function YCard({ card }: YCardProps) {
       <IonCardContent>
         {/* <IonIcon icon={card.icon} size="large" /> */}
         <IonImg src={card.icon_path} />
-        <span style={{ fontSize: "12pt", marginTop: "5pt" }}>{card.label}</span>
+        <span style={{ fontSize: "12pt", marginTop: "5pt" }}>
+          {card.label}
+          <IonBadge slot="start" color={"dark"}>{card.sum}</IonBadge>
+        </span>
       </IonCardContent>
     </IonCard>
   );
@@ -124,6 +130,7 @@ type CardData = {
   icon_path: string;
   label: string;
   path: string;
+  sum?: number;
 };
 interface YCardProps {
   card: CardData;
