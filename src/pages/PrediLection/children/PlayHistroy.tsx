@@ -28,7 +28,7 @@ export default function PlayHistroy() {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start" style={{ marginLeft: "15pt" }}>
-            <IonIcon icon={time} size="large"/>
+            <IonIcon icon={time} size="large" />
           </IonButtons>
           <IonTitle>
             <IonText>History</IonText>
@@ -36,7 +36,7 @@ export default function PlayHistroy() {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonList>
+        <IonList style={{ backgroundColor: "#ffffff00", paddingTop: "0" }}>
           {list!.play_histry.length > 0 ? (
             list?.play_histry.map((item: M3uItem, idx) => {
               return (

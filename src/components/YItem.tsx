@@ -8,11 +8,7 @@ import {
   useIonAlert,
 } from "@ionic/react";
 import {
-  eye,
-  playCircle,
-  playCircleOutline,
-  time,
-  trashOutline,
+  eye, playCircleOutline, trashOutline
 } from "ionicons/icons";
 import play from "@/../public/svg/play-svgrepo-com.svg";
 import { onPlay } from "@/plugin/Plugins";
