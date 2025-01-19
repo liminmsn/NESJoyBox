@@ -1,7 +1,7 @@
 export class M3uItem {
   url: string;
   name: string;
-  constructor(url: string, name: string, public books = false, public play = 0, public err = 0) {
+  constructor(url: string, name: string, public books = false, public history = 0, public play = 0, public err = 0) {
     this.url = url;
     this.name = name;
   }

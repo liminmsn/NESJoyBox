@@ -24,8 +24,9 @@ export default function Index({ usr, setUsr }: HomePropType) {
   }
   /**添加历史 */
   async function addHistory(card: M3uItem) {
-    usr.play_histry.push(card);
     card.play += 1;
+    card.history = new Date().getTime();
+    usr.play_histry.push(card);
     setUsr(JSON.parse(JSON.stringify(usr)));
     storage.setUsr(usr);
     await onPlay(card.url);

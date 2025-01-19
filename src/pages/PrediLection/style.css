@@ -4,8 +4,9 @@
 }
 
 .PrediLection ion-card {
-    height: calc(100vw / 3);
+    height: calc(100vw / 2.2);
     margin: 0;
+    /* background-color: white; */
 }
 .PrediLection ion-card-content{
     height: 100%;
@@ -13,4 +14,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.PrediLection ion-img{
+    width: 50%;
 }
