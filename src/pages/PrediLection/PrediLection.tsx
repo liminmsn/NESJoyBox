@@ -4,7 +4,11 @@ import {
   IonCol,
   IonContent,
   IonGrid,
+  IonHeader,
   IonImg,
+  IonItem,
+  IonList,
+  IonListHeader,
   IonRippleEffect,
   IonRow,
 } from "@ionic/react";
@@ -21,8 +25,11 @@ import subscription from "@/../public/svg/subscription-svgrepo-com.svg";
 import menu from "@/../public/svg/menu-svgrepo-com.svg";
 import "./style.css";
 import { HomePropType } from "@/Home";
+import YItemHistory from "@/components/YItemHistory";
+import { i } from "vite/dist/node/types.d-aGj9QkWt";
+import YItemBooks from "@/components/YItemBooks";
 
-export default function PrediLection() {
+export default function PrediLection({ usr, setUsr }: HomePropType) {
   const predil_ection_arr = [
     [
       {
@@ -53,6 +60,22 @@ export default function PrediLection() {
       <IonGrid>
         <YRow card_arr={predil_ection_arr} />
       </IonGrid>
+      <IonList>
+        <IonListHeader>history</IonListHeader>
+        {
+          usr.play_histry.slice(0, 4).map((item, idx) => {
+            return <YItemHistory item={item} key={idx} idx={idx} onDel={() => { }} />
+          })
+        }
+      </IonList>
+      <IonList>
+        <IonListHeader>Books</IonListHeader>
+        {
+          usr.play_histry.slice(0, 4).map((item, idx) => {
+            return <YItemBooks item={item} key={idx} idx={idx} onDel={() => { }} />
+          })
+        }
+      </IonList>
     </IonContent>
   );
 }

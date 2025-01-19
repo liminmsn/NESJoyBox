@@ -25,7 +25,7 @@ export default function YItemHistory({
 
   return (
     <IonItem className="y-item">
-      <IonImg style={{ height: "5vh" }} src={play} />
+      <IonImg style={{ height: "5vh", width: "5vh" }} src={play} />
       <div className="item">
         <IonLabel>{item.name}</IonLabel>
         <IonLabel>{new Date(item.history).toLocaleString()}&nbsp;</IonLabel>

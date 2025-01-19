@@ -31,7 +31,7 @@ const Home: React.FC = () => {
     {
       tab: "predilection",
       icon: gridOutline,
-      page: <PrediLection />,
+      page: <PrediLection usr={usr} setUsr={setUsr} />,
     },
     {
       tab: "about",
