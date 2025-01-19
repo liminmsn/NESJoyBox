@@ -20,6 +20,18 @@
   width: 50%;
 }
 
-.play_history ion-content {
-  background-color: rebeccapurple;
+.y-none {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.3;
+}
+
+.y-none ion-text {
+  font-size: 12pt;
+}
+
+.y-none ion-img {
+  width: 25% !important;
 }

@@ -1,19 +1,21 @@
 import {
   IonCard,
   IonCardContent,
-  IonCardHeader, IonCardTitle,
+  IonCardHeader,
+  IonCardTitle,
   IonCol,
   IonContent,
-  IonGrid, IonIcon, IonRippleEffect, IonRow,
-  IonText
+  IonGrid,
+  IonIcon,
+  IonRippleEffect,
+  IonRow,
+  IonText,
 } from "@ionic/react";
 import { onPlay } from "../../plugin/Plugins";
 import { M3uItem, storage } from "../../lib/loadFile";
-import { bookmark, bookmarkOutline, playCircleSharp } from 'ionicons/icons';
+import { bookmark, bookmarkOutline, playCircleSharp } from "ionicons/icons";
 import { HomePropType } from "../../Home";
 import "./style.css";
-
-
 
 export default function Index({ usr, setUsr }: HomePropType) {
   /**收藏 */
@@ -39,10 +41,7 @@ export default function Index({ usr, setUsr }: HomePropType) {
             <IonRow key={index}>
               {item.map((card, i) => {
                 return (
-                  <IonCol
-                    key={i}
-                    size={String(12 / item.length)}
-                  >
+                  <IonCol key={i} size={String(12 / item.length)}>
                     <IonCard className="ion-activatable ripple-parent">
                       <IonRippleEffect></IonRippleEffect>
                       <IonCardHeader>
@@ -54,12 +53,25 @@ export default function Index({ usr, setUsr }: HomePropType) {
                         <IonText>{card.url}</IonText>
                       </IonCardContent>
                       <div className="info">
-                        <IonText>PLAY:<IonText color={"success"}>{card.play}</IonText></IonText>
-                        <IonText>ERR:<IonText color={"warning"}>{card.err}</IonText></IonText>
+                        <IonText>
+                          PLAY:<IonText color={"success"}>{card.play}</IonText>
+                        </IonText>
+                        <IonText>
+                          ERR:<IonText color={"warning"}>{card.err}</IonText>
+                        </IonText>
                       </div>
                       <div className="play">
-                        <IonIcon icon={card.books ? bookmark : bookmarkOutline} color={card.books ? "danger" : ""} size="large" onClick={() => onBooks(card)} />
-                        <IonIcon onClick={() => addHistory(card)} icon={playCircleSharp} size="large" />
+                        <IonIcon
+                          icon={card.books ? bookmark : bookmarkOutline}
+                          color={card.books ? "danger" : ""}
+                          size="large"
+                          onClick={() => onBooks(card)}
+                        />
+                        <IonIcon
+                          onClick={() => addHistory(card)}
+                          icon={playCircleSharp}
+                          size="large"
+                        />
                       </div>
                     </IonCard>
                   </IonCol>

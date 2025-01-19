@@ -1,7 +1,5 @@
 import { M3uItem } from "@/lib/loadFile";
 import {
-  IonAlert,
-  IonButton,
   IonIcon,
   IonImg,
   IonItem,
@@ -9,10 +7,24 @@ import {
   IonText,
   useIonAlert,
 } from "@ionic/react";
-import { eyeOutline, trashSharp } from "ionicons/icons";
+import {
+  eye,
+  playCircle,
+  playCircleOutline,
+  time,
+  trashOutline,
+} from "ionicons/icons";
 import play from "@/../public/svg/play-svgrepo-com.svg";
+import { onPlay } from "@/plugin/Plugins";
 
-export default function YItem({ item, idx }: { item: M3uItem; idx: number }) {
+export default function YItem({
+  item,
+  onDel,
+}: {
+  item: M3uItem;
+  idx: number;
+  onDel: (card: M3uItem) => void;
+}) {
   const [presentAlert] = useIonAlert();
 
   return (
@@ -22,21 +34,35 @@ export default function YItem({ item, idx }: { item: M3uItem; idx: number }) {
         <IonLabel>{item.name}</IonLabel>
         <IonLabel>{new Date(item.history).toLocaleString()}&nbsp;</IonLabel>
         <IonLabel>
-          <IonIcon icon={eyeOutline} style={{ fontSize: "10pt" }} />
+          <IonIcon icon={eye} style={{ fontSize: "10pt" }} />
           &nbsp;
           <IonText>{item.play}</IonText>
         </IonLabel>
       </div>
       <div className="item">
         <IonIcon
-          icon={trashSharp}
+          icon={trashOutline}
           onClick={() =>
             presentAlert({
               header: "注意",
-              message: "A message should be a short, complete sentence.",
-              buttons: ["Action"],
+              message: `确认删除${item.name}这条历史记录？`,
+              buttons: [
+                {
+                  text: "确认",
+                  handler: () => onDel(item),
+                },
+                {
+                  text: "取消",
+                },
+              ],
             })
           }
+        />
+        <IonIcon
+          icon={playCircleOutline}
+          onClick={async () => {
+            await onPlay(item.url);
+          }}
         />
       </div>
     </IonItem>
