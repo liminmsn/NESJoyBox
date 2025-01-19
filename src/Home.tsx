@@ -12,7 +12,7 @@ import Index from "./pages/Index/Index";
 import PrediLection from "./pages/PrediLection/PrediLection";
 import About from "./pages/About/About";
 import i18n from "./i18n/i18n";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { storage, UsrData } from "./lib/loadFile";
 
 export interface HomePropType {
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <IonTabs>
+      <IonTabs onIonTabsDidChange={() => setUsr(storage.getUsr()!)}>
         {bar_arr.map((item, idx) => {
           return <IonTab tab={item.tab} key={idx}>
             <IonContent>

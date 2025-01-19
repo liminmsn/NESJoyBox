@@ -20,6 +20,7 @@ import brows from "@/../public/svg/browse-svgrepo-com.svg";
 import subscription from "@/../public/svg/subscription-svgrepo-com.svg";
 import menu from "@/../public/svg/menu-svgrepo-com.svg";
 import "./style.css";
+import { HomePropType } from "@/Home";
 
 export default function PrediLection() {
   const predil_ection_arr = [

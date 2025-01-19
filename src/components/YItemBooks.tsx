@@ -8,12 +8,13 @@ import {
   useIonAlert,
 } from "@ionic/react";
 import {
+  bookmarkSharp,
   eye, playCircleOutline, trashOutline
 } from "ionicons/icons";
 import play from "@/../public/svg/play-svgrepo-com.svg";
 import { onPlay } from "@/plugin/Plugins";
 
-export default function YItem({
+export default function YItemBooks({
   item,
   onDel,
 }: {
@@ -37,11 +38,12 @@ export default function YItem({
       </div>
       <div className="item">
         <IonIcon
-          icon={trashOutline}
+          className="books"
+          icon={bookmarkSharp}
           onClick={() =>
             presentAlert({
               header: "注意",
-              message: `确认删除${item.name}这条历史记录？`,
+              message: `确认取消收藏${item.name}？`,
               buttons: [
                 {
                   text: "确认",

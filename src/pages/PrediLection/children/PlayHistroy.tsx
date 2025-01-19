@@ -11,7 +11,7 @@ import {
 } from "@ionic/react";
 import { useState } from "react";
 import { M3uItem, storage } from "../../../lib/loadFile";
-import YItem from "@/components/YItem";
+import YItemHistory from "@/components/YItemHistory";
 import YNone from "@/components/YNone";
 import { time } from "ionicons/icons";
 
@@ -40,7 +40,7 @@ export default function PlayHistroy() {
           {list!.play_histry.length > 0 ? (
             list?.play_histry.map((item: M3uItem, idx) => {
               return (
-                <YItem item={item} idx={idx} key={idx} onDel={onDelItem} />
+                <YItemHistory item={item} idx={idx} key={idx} onDel={onDelItem} />
               );
             })
           ) : (

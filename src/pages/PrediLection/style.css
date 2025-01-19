@@ -8,6 +8,7 @@
   margin: 0;
   /* background-color: white; */
 }
+
 .PrediLection ion-card-content {
   height: 100%;
   display: flex;
@@ -23,7 +24,7 @@
 .y-none {
   width: 100%;
   /* height: calc(100vh - 56px - 16px); */
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,4 +39,39 @@
 .y-none ion-img {
   width: 25vw;
   height: 25vw;
+}
+
+
+
+.y-item .item:nth-child(3) {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.y-item .item:nth-child(3) ion-icon {
+  font-size: 22pt;
+  margin-left: 5pt;
+
+  &:nth-child(1) {
+    color: var(--ion-color-danger);
+  }
+}
+
+.y-item .item ion-label {
+  font-size: 12pt;
+
+  &:nth-child(2) {
+    font-size: 8pt;
+    margin-block: 2.5pt;
+    color: #649fd1;
+  }
+
+  &:nth-child(3) {
+    display: flex;
+    align-items: center;
+    font-size: 8pt;
+    color: #999;
+  }
 }
