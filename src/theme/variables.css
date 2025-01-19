@@ -15,6 +15,7 @@ http://ionicframework.com/docs/theming/ */
   --ion-tab-bar-color-selected: #5d8736ff;
   --ion-text-color: #5d8736ff;
   --ion-color-primary: currentColor;
+  --ion-font-family: "qtmk";
   /* --ion-background-color: #F4FFC3; */
 }
 

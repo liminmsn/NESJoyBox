@@ -11,13 +11,14 @@
     margin: 0 !important;
     padding-left: 10pt;
 }
+
 .About_content p {
-    margin: 0!important;
-    padding-inline: 10pt;
+    margin: 0 !important;
+    padding-inline: 20vw;
 }
 
 .ms {
-    padding-right: 10pt;
+    padding-right: 20vw;
     /* font-size: 16pt;/ */
     text-align: right;
 }

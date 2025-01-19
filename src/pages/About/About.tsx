@@ -10,13 +10,10 @@ export default function About() {
         <IonImg style={{ width: "25pt" }} src={icon} />
         <h1> {i18n.t(`about.title`)}</h1>
       </div>
-      <p style={{ fontSize: "12pt", lineHeight: 1.6 }}>
+      <p style={{ fontSize: "10pt", lineHeight: 1.6 }}>
         {i18n.t(`about.content.1`)}
       </p>
       <div className="ms">- {i18n.t(`about.content.2`)}</div>
-      <div style={{ textAlign: "center", color: "#555" }}>
-        -{i18n.t(`about.content.3`)}-
-      </div>
     </IonContent>
   );
 }
