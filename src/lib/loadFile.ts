@@ -59,8 +59,8 @@ export const storage = {
         grid_arr.push(res.slice(i, i + grid));
       }
       localStorage.setItem(UsrData.name, JSON.stringify(UsrData.setPlayList(grid_arr)));
-      console.log("初始化用户配置成功！", this.getUsr());
     }
+    console.log("初始化用户配置成功！", this.getUsr());
   },
   getUsr(): UsrData | null {
     const usr = localStorage.getItem(UsrData.name);

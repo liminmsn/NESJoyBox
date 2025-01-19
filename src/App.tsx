@@ -41,31 +41,31 @@ setupIonicReact();
 //其它页面
 const children_page_arr = [
   {
-    path: '/play_histroy',
-    comp: PlayHistroy
+    path: "/play_histroy",
+    comp: PlayHistroy,
   },
   {
-    path: '/book_marks',
-    comp: BookMarks
+    path: "/book_marks",
+    comp: BookMarks,
   },
   {
-    path: '/settings',
-    comp: Settings
+    path: "/settings",
+    comp: Settings,
   },
 ];
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      {children_page_arr.map((page, key) => {
-        return <Route path={page.path} key={key} component={page.comp}/>
-      })}
       <IonRouterOutlet>
         <Route exact path="/main" component={Home} />
         <Route exact path="/">
           <Redirect to="/main" />
         </Route>
       </IonRouterOutlet>
+      {children_page_arr.map((page, key) => {
+        return <Route path={page.path} key={key} component={page.comp} />;
+      })}
     </IonReactRouter>
   </IonApp>
 );
