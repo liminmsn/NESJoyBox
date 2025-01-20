@@ -4,6 +4,7 @@ export default {
       language: {
         "1": "Language",
         "2": "SetAppLangage",
+        "3": "Confirm that the cache is cleared",
       },
       check: {
         "1": "Cache",
