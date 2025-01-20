@@ -30,6 +30,7 @@ import YItemHistory from "@/components/YItemHistory";
 import { i } from "vite/dist/node/types.d-aGj9QkWt";
 import YItemBooks from "@/components/YItemBooks";
 import { M3uItem, storage } from "@/lib/loadFile";
+import YNone from "@/components/YNone";
 
 export default function PrediLection({ usr, setUsr }: HomePropType) {
   const predil_ection_arr = [
@@ -91,6 +92,7 @@ export default function PrediLection({ usr, setUsr }: HomePropType) {
             />
           );
         })}
+        {usr.play_histry.length === 0 && <YNone />}
       </IonList>
       <IonList>
         <IonListHeader>{i18n.t("predilection.card.2")}</IonListHeader>
@@ -108,6 +110,7 @@ export default function PrediLection({ usr, setUsr }: HomePropType) {
               />
             );
           })}
+        {usr.play_list.flat(1).filter((item) => item.books).length === 0 && <YNone />}
       </IonList>
     </IonContent>
   );
