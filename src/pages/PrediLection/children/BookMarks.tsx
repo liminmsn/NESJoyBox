@@ -33,13 +33,10 @@ export default function BookMarks() {
         </IonHeader>
         <IonContent>
             <IonList style={{ backgroundColor: "#ffffff00", paddingBlock: "0" }}>
-                {books!.play_list.flat(1).filter(item => item.books).length > 0 ? (
-                    books!.play_list.flat(1).filter(item => item.books).map((m3u, idx) => {
-                        return <YItemBooks item={m3u} idx={idx} onDel={onBookslItem} key={idx} />
-                    })
-                ) : (
-                    <YNone />
-                )}
+                {books!.play_list.flat(1).filter(item => item.books).map((item, idx) => {
+                    return <YItemBooks item={item} key={idx} idx={idx} onDel={() => onBookslItem(item)} />
+                })}
+               {books!.play_list.flat(1).filter(item => item.books).length === 0 && <YNone/>}
             </IonList>
         </IonContent>
     </IonPage>

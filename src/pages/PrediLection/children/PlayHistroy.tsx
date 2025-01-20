@@ -38,15 +38,12 @@ export default function PlayHistroy() {
       </IonHeader>
       <IonContent>
         <IonList style={{ backgroundColor: "#ffffff00", paddingBlock: "0" }}>
-          {list!.play_histry.length > 0 ? (
-            list?.play_histry.map((item: M3uItem, idx) => {
-              return (
-                <YItemHistory item={item} idx={idx} key={idx} onDel={onDelItem} />
-              );
-            })
-          ) : (
-            <YNone />
-          )}
+          {list?.play_histry.map((item: M3uItem, idx) => {
+            return (
+              <YItemHistory item={item} idx={idx} key={idx} onDel={onDelItem} />
+            );
+          })}
+          {list!.play_histry.length === 0 && <YNone />}
         </IonList>
       </IonContent>
     </IonPage>
