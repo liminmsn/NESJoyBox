@@ -29,6 +29,7 @@ import { HomePropType } from "@/Home";
 import YItemHistory from "@/components/YItemHistory";
 import { i } from "vite/dist/node/types.d-aGj9QkWt";
 import YItemBooks from "@/components/YItemBooks";
+import { M3uItem, storage } from "@/lib/loadFile";
 
 export default function PrediLection({ usr, setUsr }: HomePropType) {
   const predil_ection_arr = [
@@ -38,14 +39,14 @@ export default function PrediLection({ usr, setUsr }: HomePropType) {
         icon_path: brows,
         label: i18n.t("predilection.card.1"),
         path: "/play_histroy",
-        sum: usr.play_histry.length
+        sum: usr.play_histry.length,
       },
       {
         icon: bookmarksOutline,
         icon_path: subscription,
         label: i18n.t("predilection.card.2"),
         path: "/book_marks",
-        sum: usr.play_list.flat(1).filter(item => item.books).length
+        sum: usr.play_list.flat(1).filter((item) => item.books).length,
       },
       {
         icon: constructOutline,
@@ -55,6 +56,21 @@ export default function PrediLection({ usr, setUsr }: HomePropType) {
       },
     ],
   ];
+
+  const onDown = function (item: M3uItem, type: number) {
+    switch (type) {
+      case 0:
+        const idx = usr.play_histry.indexOf(item);
+        usr?.play_histry.splice(idx, 1); //删除记录
+        setUsr(storage.setUsr(usr)); //存到本地在实时更新
+        break;
+      case 1:
+        item.books = false;
+        setUsr(storage.setUsr(usr)); //存到本地在实时更新
+        break;
+    }
+  };
+
   return (
     <IonContent className="PrediLection">
       <Route exact path="/play_histroy">
@@ -65,19 +81,33 @@ export default function PrediLection({ usr, setUsr }: HomePropType) {
       </IonGrid>
       <IonList>
         <IonListHeader>{i18n.t("predilection.card.1")}</IonListHeader>
-        {
-          usr.play_histry.slice(0, 4).map((item, idx) => {
-            return <YItemHistory item={item} key={idx} idx={idx} onDel={() => { }} />
-          })
-        }
+        {usr.play_histry.slice(0, 4).map((item, idx) => {
+          return (
+            <YItemHistory
+              item={item}
+              key={idx}
+              idx={idx}
+              onDel={() => onDown(item, 0)}
+            />
+          );
+        })}
       </IonList>
       <IonList>
         <IonListHeader>{i18n.t("predilection.card.2")}</IonListHeader>
-        {
-          usr.play_histry.slice(0, 4).map((item, idx) => {
-            return <YItemBooks item={item} key={idx} idx={idx} onDel={() => { }} />
-          })
-        }
+        {usr.play_list
+          .flat(1)
+          .filter((item) => item.books)
+          .slice(0, 4)
+          .map((item, idx) => {
+            return (
+              <YItemBooks
+                item={item}
+                key={idx}
+                idx={idx}
+                onDel={() => onDown(item, 1)}
+              />
+            );
+          })}
       </IonList>
     </IonContent>
   );
@@ -118,7 +148,9 @@ function YCard({ card }: YCardProps) {
         <IonImg src={card.icon_path} />
         <span style={{ fontSize: "12pt", marginTop: "5pt" }}>
           {card.label}
-          <IonBadge slot="start" color={"dark"}>{card.sum}</IonBadge>
+          <IonBadge slot="start" color={"dark"}>
+            {card.sum}
+          </IonBadge>
         </span>
       </IonCardContent>
     </IonCard>

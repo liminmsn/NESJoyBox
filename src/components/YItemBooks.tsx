@@ -9,7 +9,9 @@ import {
 } from "@ionic/react";
 import {
   bookmarkSharp,
-  eye, playCircleOutline, trashOutline
+  eye,
+  playCircleOutline,
+  trashOutline,
 } from "ionicons/icons";
 import play from "@/../public/svg/play-svgrepo-com.svg";
 import { onPlay } from "@/plugin/Plugins";
@@ -44,7 +46,7 @@ export default function YItemBooks({
           onClick={() =>
             presentAlert({
               header: i18n.t("alert.0"),
-              message: `确认取消收藏${item.name}？`,
+              message: `${i18n.t("alert.info1.1")}${item.name}？`,
               buttons: [
                 {
                   text: i18n.t("alert.1"),
