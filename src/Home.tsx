@@ -5,7 +5,8 @@ import {
   IonTabBar,
   IonTabButton,
   IonTabs,
-  IonText
+  IonText,
+  IonToast
 } from "@ionic/react";
 import { radioOutline, gridOutline, libraryOutline } from "ionicons/icons";
 import Index from "./pages/Index/Index";
@@ -42,6 +43,7 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
+      <IonToast trigger="open-toast" message="This toast will disappear after 5 seconds" duration={5000}></IonToast>
       <IonTabs onIonTabsDidChange={() => setUsr(storage.getUsr()!)}>
         {bar_arr.map((item, idx) => {
           return <IonTab tab={item.tab} key={idx}>

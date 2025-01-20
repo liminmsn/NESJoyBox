@@ -1,4 +1,5 @@
 import {
+  IonButton,
   IonCard,
   IonCardContent,
   IonCardHeader,
@@ -10,19 +11,27 @@ import {
   IonRippleEffect,
   IonRow,
   IonText,
+  IonToast,
+  useIonToast,
 } from "@ionic/react";
 import { onPlay } from "../../plugin/Plugins";
 import { M3uItem, storage } from "../../lib/loadFile";
 import { bookmark, bookmarkOutline, playCircleSharp } from "ionicons/icons";
 import { HomePropType } from "../../Home";
 import "./style.css";
+import i18n from "@/i18n/i18n";
 
 export default function Index({ usr, setUsr }: HomePropType) {
+  const [present] = useIonToast();
   /**收藏 */
   function onBooks(item: M3uItem) {
     item.books = !item.books;
     setUsr(JSON.parse(JSON.stringify(usr)));
     storage.setUsr(usr);
+    present({
+      message: item.books ? i18n.t("index.books.1") : i18n.t("index.books.2"),
+      duration: 1000,
+    });
   }
   /**添加历史 */
   async function addHistory(card: M3uItem) {
@@ -62,6 +71,7 @@ export default function Index({ usr, setUsr }: HomePropType) {
                       </div>
                       <div className="play">
                         <IonIcon
+                          id="open-toast"
                           icon={card.books ? bookmark : bookmarkOutline}
                           color={card.books ? "danger" : ""}
                           size="large"

@@ -20,6 +20,10 @@ export default {
     },
     index: {
       title: "广播",
+      books:{
+        "1":"收藏成功!",
+        "2":"取消收藏!"
+      }
     },
     predilection: {
       title: "偏好",

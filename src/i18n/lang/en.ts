@@ -3,15 +3,15 @@ export default {
     setting: {
       language: {
         "1": "Language",
-        "2": "SetAppLangage"
+        "2": "SetAppLangage",
       },
       check: {
         "1": "Cache",
-        "2": "Clear App Cache"
+        "2": "Clear App Cache",
       },
       version: {
-        "1": "version"
-      }
+        "1": "version",
+      },
     },
     tab_btn_label: {
       home: "Radio",
@@ -20,6 +20,10 @@ export default {
     },
     index: {
       title: "Radio",
+      books: {
+        "1": "Book added to collection successfully!",
+        "2": "Book removed from collection!",
+      },
     },
     predilection: {
       title: "PreDilection",
@@ -27,7 +31,7 @@ export default {
         "1": "PlayHistory",
         "2": "MyBookMarks",
         "3": "Settings",
-      }
+      },
     },
     about: {
       title: "About",
@@ -46,17 +50,17 @@ export default {
         "3": "End",
       },
     },
-    "alert": {
-      "info0": {
+    alert: {
+      info0: {
         "1": "Confirm Deletion",
-        "2": "This historical record?"
+        "2": "This historical record?",
       },
-      "info1": {
-        "1": "Confirm Cancel Collection"
+      info1: {
+        "1": "Confirm Cancel Collection",
       },
       "0": "Attention!",
       "1": "Confirm",
-      "2": "Cancel"
-    }
+      "2": "Cancel",
+    },
   },
 };
