@@ -1,5 +1,5 @@
 import { IonContent, IonImg } from "@ionic/react";
-import icon from "../../../public/favicon.png";
+import icon from "../../../public/favicon.webp";
 import "./style.css";
 import i18n from "../../i18n/i18n";
 
