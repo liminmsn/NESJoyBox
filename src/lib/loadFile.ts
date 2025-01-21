@@ -1,7 +1,14 @@
 export class M3uItem {
   url: string;
   name: string;
-  constructor(url: string, name: string, public books = false, public history = 0, public play = 0, public err = 0) {
+  constructor(
+    url: string,
+    name: string,
+    public books = false,
+    public history = 0,
+    public play = 0,
+    public err = 0,
+  ) {
     this.url = url;
     this.name = name;
   }
@@ -25,8 +32,8 @@ async function getM3u() {
       if (i % 2 === 0) {
         m3u_arr.push(
           new M3uItem(
-            lines[i + 1],
-            lines[i].replace(/#EXTINF:-1,|#EXTINF:-1/g, ""),
+            lines[i + 1].replace(/\r/i, ""),
+            lines[i].replace(/#EXTINF:-1,|#EXTINF:-1/g, "").replace(/\r/i, ""),
           ),
         );
       }
@@ -40,7 +47,6 @@ async function getM3u() {
 
 export class UsrData {
   play_list: M3uItem[][] = [];
-  play_books: M3uItem[] = [];
   play_histry: M3uItem[] = [];
   static setPlayList(list: M3uItem[][]) {
     const obj = new UsrData();
@@ -58,7 +64,10 @@ export const storage = {
       for (let i = 0; i < res.length; i += grid) {
         grid_arr.push(res.slice(i, i + grid));
       }
-      localStorage.setItem(UsrData.name, JSON.stringify(UsrData.setPlayList(grid_arr)));
+      localStorage.setItem(
+        UsrData.name,
+        JSON.stringify(UsrData.setPlayList(grid_arr)),
+      );
     }
     console.log("初始化用户配置成功！", this.getUsr());
   },
@@ -72,5 +81,5 @@ export const storage = {
   setUsr(usr: UsrData): UsrData {
     localStorage.setItem(UsrData.name, JSON.stringify(usr));
     return this.getUsr()!;
-  }
-}
+  },
+};

@@ -29,6 +29,7 @@ export default function YItemHistory({
       <IonImg style={{ height: "5vh", width: "5vh" }} src={play} />
       <div className="item">
         <IonLabel>{item.name}</IonLabel>
+        <IonLabel>"{item.url}"</IonLabel>
         <IonLabel>{new Date(item.history).toLocaleString()}&nbsp;</IonLabel>
         <IonLabel>
           <IonIcon icon={eye} style={{ fontSize: "10pt" }} />
