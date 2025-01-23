@@ -21,12 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:name=".modules.HLSPlay.HLSPlay"
-            android:label="HLSPlay">
-        </activity>
-
 
         <provider
             android:name="androidx.core.content.FileProvider"
