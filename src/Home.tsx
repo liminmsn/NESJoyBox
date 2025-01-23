@@ -8,7 +8,6 @@ import {
   IonText,
 } from "@ionic/react";
 import { radioOutline, gridOutline, libraryOutline } from "ionicons/icons";
-import { useRef } from "react";
 import Index from "./pages/Index/Index";
 import PrediLection from "./pages/PrediLection/PrediLection";
 import About from "./pages/About/About";
@@ -25,12 +24,7 @@ const Home: React.FC = () => {
       tab: "predilection",
       icon: gridOutline,
       page: <PrediLection/>,
-    },
-    {
-      tab: "about",
-      icon: libraryOutline,
-      page: <About/>,
-    },
+    }
   ];
 
   return (
