@@ -4,7 +4,4 @@
     <string name="title_activity_main">NESJoyBox</string>
     <string name="package_name">io.ionic.nesjoybox</string>
     <string name="custom_url_scheme">io.ionic.nesjoybox</string>
-    <string name="title">这是一个自定义对话框！</string>
-    <string name="confirm">确认</string>
-    <string name="btn">Play</string>
 </resources>
