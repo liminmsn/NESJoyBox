@@ -47,11 +47,6 @@ const children_page_arr = [
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      {children_page_arr.map((page, key) => {
-        return <Route path={page.path} key={key}>
-          <page.comp />
-        </Route>
-      })}
       <IonRouterOutlet>
         <Route exact path="/main">
           <Home />
@@ -60,6 +55,11 @@ const App: React.FC = () => (
           <Redirect to="/main" />
         </Route>
       </IonRouterOutlet>
+      {children_page_arr.map((page, key) => {
+        return <Route path={page.path} key={key}>
+          <page.comp />
+        </Route>
+      })}
     </IonReactRouter>
   </IonApp>
 );
